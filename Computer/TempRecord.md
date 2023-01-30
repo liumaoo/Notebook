@@ -1,5 +1,11 @@
 ## 临时操作记录
 ### Github操作记录
+
+1.将新建的文件保存到对应目录
+2.git add . (添加到暂存区)
+3.git commit -m "提交信息"
+4.git push -u origin main
+
 ### Typora操作记录
 ##### 主题中.css文件中的一些设置
 ```css
