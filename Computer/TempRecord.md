@@ -1,24 +1,42 @@
 ## 临时操作记录
 ### Github操作记录
 
+##### 代码拉取
+
 在GitHub中建立新的仓库后拉取到本地：1.先建立本地仓库，再连接远程仓库，最后拉取分支 2.直接从远程仓库克隆到本地
 
 ```c++
 1.git init //初始化一个本地git版本库
-2.git remote add origin git@github.com:username/repository.git  //建立和连接一个远程仓库
+2.git branch -M main //-M 对本地分支重命名，本地创建默认是master，应改为main
+3.git remote add origin git@github.com:username/repository.git  //建立和连接一个远程仓库
 //origin 即为远程仓库 git@github.com:username/repository.git 的别名
-3.git pull origin main //将远程仓库的main分支拉取合并到本地仓库
+4.git pull origin main //将远程仓库的main分支拉取合并到本地仓库
 //git pull <远程主机名> <远程分支名>:<本地分支名>
 
 git clone git@github.com:username/repository.git //将远程仓库克隆到本地
 ```
 
+##### 代码提交
+
 向Github远程仓库中提交更新：
 
 ```c++
 1.git add . //将所有更新的文件添加到暂存区
-2.git commit -m "提交信息"
-3.git push -u origin main
+2.git commit -m "提交信息日志" //将本地修改过的文件提交到本地仓库中
+3.git push origin main  //将本地仓库中的最新信息发送给远程仓库
+```
+
+##### 分支操作
+
+Github创建仓库后默认分支是main，而本地创建是master。提交后发现Github仓库出现master分支，解决步骤如下：
+
+```c++
+1.git branch -M main //-M 对本地分支重命名
+2.git branch -a //查看当前github仓库的所有分支
+3.git push origin --delete master //删除远程分支master
+4.git checkout main //切换到当前分支main，也就要保留下来的分支
+5.git merge remotes/origin/main //合并分支
+6.git push origin main //提交修改
 ```
 
 ### Typora操作记录
