@@ -1,6 +1,16 @@
 ## 临时操作记录
 ### Github操作记录
 
+##### 生成 ssh key
+
+```c++
+1.ssh-keygen -t rsa -C "youremail@example.com" //生成新的rsa密钥
+2.ssh-add ~/.ssh/id_rsa //将产生的新ssh key添加到ssh-agent中
+3.将SSH key 添加到GitHub账户 //在账户选项中选择 “Settings”–>“SSH and GPG keys”–>“New SSH key”，
+//然后打开之前新生成的id_rsa.pub文件，一般在C盘用户名下的.ssh文件夹下，将密钥复制后填写到账户中
+4.ssh -T git@github.com //验证ssh key是否配置成功
+```
+
 ##### 代码拉取
 
 在GitHub中建立新的仓库后拉取到本地：1.先建立本地仓库，再连接远程仓库，最后拉取分支 2.直接从远程仓库克隆到本地
