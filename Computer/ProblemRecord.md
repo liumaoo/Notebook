@@ -28,7 +28,7 @@ for (const auto& ItsPath : FilePathArray)
     ItsPath.FindLastChar('/', StartIndex);
     ItsPath.FindLastChar('.', EndIndex);
     FString FileName = ItsPath.Mid(StartIndex + 1, EndIndex - StartIndex - 1); //取文件名
- 	FString LoadObjectPath = ItsPath.Replace(*BasePath, TEXT("/Game/")).Replace(TEXT(".uasset"), *FString::Printf(TEXT(".%s"), *FileName));
+    FString LoadObjectPath = ItsPath.Replace(*BasePath, TEXT("/Game/")).Replace(TEXT(".uasset"), *FString::Printf(TEXT(".%s"), *FileName));
     //用于加载UObject的路径，例：/Game/UI/TestUI.TestUI
     FString LoadObjectPath = ItsPath.Replace(*BasePath, TEXT("/Game/")).Replace(TEXT(".uasset"), *FString::Printf(TEXT(".%s"), *FileName)) + "_C";
     //用于加载UClass的路径，例：/Game/UI/TestUI.TestUI_C
