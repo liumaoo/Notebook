@@ -49,6 +49,14 @@ Github创建仓库后默认分支是main，而本地创建是master。提交后�
 6.git push origin main //提交修改
 ```
 
+### SVN操作记录
+
+##### 查看最新的仓库版本号
+
+```c++
+svn info -r HEAD  //可查看最新的仓库信息，或在提交log中查看当前或以往的提交记录和版本号
+```
+
 ### Typora操作记录
 
 ##### 主题中.css文件中的一些设置
@@ -70,3 +78,7 @@ Github创建仓库后默认分支是main，而本地创建是master。提交后�
 }
 ```
 ##### 快捷键操作
+
+### 细碎知识点记录
+
+LF与CRLF：不同操作系统下的默认换行符，LF为Unix/Linux/Mac OS X下的换行符，转义字符为 \n。CRLF为Windows下的换行符，转义字符为 \r\n。
