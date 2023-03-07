@@ -57,6 +57,10 @@ Github创建仓库后默认分支是main，而本地创建是master。提交后�
 svn info -r HEAD  //可查看最新的仓库信息，或在提交log中查看当前或以往的提交记录和版本号
 ```
 
+##### 回退版本操作
+
+右键TortoiseSVN选择Update to revision，Show log之后选择合适的回退版本就可以了（单个文件与整个工程都可以）。
+
 ### Typora操作记录
 
 ##### 主题中.css文件中的一些设置
@@ -79,6 +83,21 @@ svn info -r HEAD  //可查看最新的仓库信息，或在提交log中查看当
 ```
 ##### 快捷键操作
 
+### SQLite操作记录
+
+```sqlite
+/*查找数据，Websites为表名，where为条件筛选关键字，alexa和country为表中的字段*/
+select * from Websites where alexa > 15 and (country = 'CN' or country = 'USA');
+/*按字段排序，desc关键字为降序，asc关键字为升序*/
+select * from Websites order by alexa desc;
+/*查找字段中含有指定字符的数据，%为通配符，与like关键字搭配使用*/
+select * from Websites where url like '%oo%';
+```
+
+
+
 ### 细碎知识点记录
 
 LF与CRLF：不同操作系统下的默认换行符，LF为Unix/Linux/Mac OS X下的换行符，转义字符为 \n。CRLF为Windows下的换行符，转义字符为 \r\n。
+
+CMake的存在意义，用于构建和编译整个工程，是一个跨平台的通用工具，底层还是调用各个操作系统下的编译器。单独的编译器，如GCC一次只能编译一个文件，对于整个工程而言，可以利用cmake构建编译，相当于VS中的build了。
